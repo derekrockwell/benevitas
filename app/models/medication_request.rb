@@ -11,8 +11,8 @@ class MedicationRequest < ActiveRecord::Base
 	
 	belongs_to :user
 	accepts_nested_attributes_for :drugs, allow_destroy: true
-	accepts_nested_attributes_for :prescriptions, allow_destroy: true
-	accepts_nested_attributes_for :otc, allow_destroy: true
+	accepts_nested_attributes_for :prescriptions, allow_destroy: true, :reject_if => proc { |a| a['name'].blank?}
+	accepts_nested_attributes_for :otc, allow_destroy: true, :reject_if => proc { |a| a['name'].blank?}
 	attr_accessible :published, :response_summary, :user_id, 
 	:drugs_attributes, :prescriptions_attributes, :otc_attributes
 
