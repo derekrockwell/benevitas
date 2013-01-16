@@ -56,7 +56,7 @@ module BenevitasMvp
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/font"
-
+    config.assets.initialize_on_precompile = false
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
     # Version of your assets, change this if you want to expire all your assets
