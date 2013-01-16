@@ -14,6 +14,6 @@ class MedicationRequest < ActiveRecord::Base
 	accepts_nested_attributes_for :prescriptions, allow_destroy: true
 	accepts_nested_attributes_for :otc, allow_destroy: true
 	attr_accessible :published, :response_summary, :user_id, 
-	:drugs_attributes, :prescriptions_attributes, :otc_attributes, :medication_type
+	:drugs_attributes, :prescriptions_attributes, :otc_attributes
 
 end
