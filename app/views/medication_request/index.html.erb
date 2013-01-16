@@ -1,45 +1,8 @@
-<%= form_for @medication_request, :html => {:class => "form-horizontal"} do |f| %>
-
-<h2>Prescriptions</h2>
-<div id="prescriptions">
-<div class="items">
-  <%= f.nested_fields_for :prescriptions do |f| %>
-  <fieldset class="item">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <a href="#" class="remove">remove</a>
-    <%= f.hidden_field :medication_type, :value => "prescription" %>
-    <%= f.hidden_field :id %>
-    <%= f.hidden_field :_destroy %>
-  </fieldset>
-  <% end %>
-</div>
-
-<a href="#" class="add">add otc</a>
-</div>
-
-<h2>Over the counter and subscriptions</h2>
-<div id="otc">
-<div class="items">
-  <%= f.nested_fields_for :otc do |f| %>
-  <fieldset class="item">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <a href="#" class="remove">remove</a>
-
-    <%= f.hidden_field :medication_type, :value => "otc" %>
-    <%= f.hidden_field :id %>
-    <%= f.hidden_field :_destroy %>
-  </fieldset>
-  <% end %>
-</div>
-
-<a href="#" class="add">add otc</a>
-</div>
-
-<div class="row">
+<div class="row well ">
 	<div class="span6">
-<%= f.submit "Submit Request", :class => "btn btn-large btn-primary" %>
-<% end %>
+		.
+	</div>
+	<div class="span4 well well-raised">
+		<%= render 'form' %>
+	</div>
+</div>
