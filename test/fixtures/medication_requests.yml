@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  published: false
+  response_summary: MyText
+
+two:
+  published: false
+  response_summary: MyText
