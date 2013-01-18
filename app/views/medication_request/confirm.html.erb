@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="offset2 span7 well well-raised">
+		<h1>Is this correct?</h1>
+		<p class="lead">Prescriptions</p>
+		<% unless @medication_request.prescriptions.empty? %>
+		<ul>
+			<% @medication_request.prescriptions.each do |prescription| %>
+			<li><%=prescription.name%></li>
+			<%end%>
+		</ul>
+		<%end%>
+		<p class="lead">Over the Counter/Supplements</p>
+		<% unless @medication_request.otc.empty? %>
+		<ul>
+			<% @medication_request.otc.each do |otc| %>
+			<li><%=otc.name%></li>
+			<%end%>
+		</ul>
+		<%end%>
+		<%= link_to "Submit Request", medication_request_path(@medication_request), :method => :put %>
+	</div>
+</div>

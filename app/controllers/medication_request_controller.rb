@@ -9,6 +9,8 @@ class MedicationRequestController < ApplicationController
 			current_user.medication_request
 		end
 
+		render :pending if @medication_request.published 
+
 		while @medication_request.prescriptions.length < 2
 			@medication_request.prescriptions.build
 		end
@@ -19,12 +21,15 @@ class MedicationRequestController < ApplicationController
 
 	end
 
-	def show
-		@medication = current_user.medication_request
+	def confirm
+		@medication_request = current_user.medication_request
+		@medication_request.attributes = params[:medication_request]
+		@medication_request.save
+
 	end
 
 	def update
-		current_user.medication_request.attributes = params[:medication_request]
+		current_user.medication_request.published = true
 		current_user.medication_request.save
 		redirect_to medication_request_index_path
 	end

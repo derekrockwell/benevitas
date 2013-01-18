@@ -1,7 +1,11 @@
 BenevitasMvp::Application.routes.draw do
 
  
-  resources :medication_request
+  resources :medication_request do
+  	put 'confirm'
+  	post 'confirm'
+  	get 'confirm'
+  end
 
   devise_for :admins
 

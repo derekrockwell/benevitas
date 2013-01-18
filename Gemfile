@@ -5,6 +5,7 @@ gem 'devise_invitable', :git => "http://github.com/scambra/devise_invitable.git"
 gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 gem 'awesome_nested_fields'
 gem 'simple_form'
+gem 'wicked'
 group :development do
 	gem "better_errors"
 	gem 'sqlite3'
