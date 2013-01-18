@@ -9,6 +9,14 @@ class MedicationRequestController < ApplicationController
 			current_user.medication_request
 		end
 
+		while @medication_request.prescriptions.length < 2
+			@medication_request.prescriptions.build
+		end
+
+		while @medication_request.otc.length < 2
+			@medication_request.otc.build
+		end		
+
 	end
 
 	def show

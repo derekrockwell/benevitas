@@ -21,10 +21,8 @@
       <%= f.hidden_field :medication_type, :value => "prescribed" %>
       <%= f.hidden_field :id %>
       <%= f.hidden_field :_destroy %>
-
-      <% end %>
-
     </fieldset>
+    <% end %>    
   </div>
   <div class="control-group">
     <div class="control">
@@ -47,7 +45,7 @@
         <div class="controls">
           <div class="input-append">
             <%= f.text_field :name, :class => "span3" %>
-           <a href="#" class="btn remove">
+            <a href="#" class="btn remove">
               <i class="icon-large icon-remove"></i>
             </a>
           </div>
@@ -57,14 +55,12 @@
       <%= f.hidden_field :medication_type, :value => "otc" %>
       <%= f.hidden_field :id %>
       <%= f.hidden_field :_destroy %>
-
-      <% end %>
-
     </fieldset>
+    <% end %>    
   </div>
   <div class="control-group">
     <div class="control">
-            <a href="#" class="btn add">
+      <a href="#" class="btn add">
         <i class="icon-large icon-plus"></i>
       </a>
     </div>
