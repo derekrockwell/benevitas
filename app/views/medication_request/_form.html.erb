@@ -1,20 +1,17 @@
 <%= form_for @medication_request, :url => medication_request_confirm_path(@medication_request), :html => {:class => "form-vertical"} do |f| %>
 
 <legend>Prescriptions</legend>
+<span class="help-block">List your presriptions below:</span>
 <div id="prescriptions">
+
   <div class="items">
+
     <%= f.nested_fields_for :prescriptions do |f| %>
     <fieldset class="item">
-
       <div class="control-group">
-        <%= f.label :name, :class => "control-label" %>
         <div class="controls">
-          <div class="input-append">
-            <%= f.text_field :name, :class => "span3" %>
-            <a href="#" class="btn remove">
-              <i class="icon-large icon-remove"></i>
-            </a>
-          </div>
+          <%= f.text_field :name, :class => "span3" %>
+          <button type="button" class="close remove" style="float:none" data-dismiss="alert">&times;</button>
         </div>
       </div>
 
@@ -27,28 +24,23 @@
   <div class="control-group">
     <div class="control">
       <a href="#" class="btn add">
-        <i class="icon-large icon-plus"></i>
+        <i class="icon-large icon-plus"></i> Add More
       </a>
     </div>
   </div>
 </div>
 <hr />
 
-<legend>Over the Counter and Supplements</legend>
+<legend>Over-the-Counter &amp; Supplements</legend>
 <div id="otc">
   <div class="items">
     <%= f.nested_fields_for :otc do |f| %>
     <fieldset class="item">
 
       <div class="control-group">
-        <%= f.label :name, :class => "control-label" %>
         <div class="controls">
-          <div class="input-append">
-            <%= f.text_field :name, :class => "span3" %>
-            <a href="#" class="btn remove">
-              <i class="icon-large icon-remove"></i>
-            </a>
-          </div>
+          <%= f.text_field :name, :class => "span3" %>
+          <button type="button" class="close remove" style="float:none" data-dismiss="alert">&times;</button>
         </div>
       </div>
 
@@ -61,7 +53,7 @@
   <div class="control-group">
     <div class="control">
       <a href="#" class="btn add">
-        <i class="icon-large icon-plus"></i>
+        <i class="icon-large icon-plus"></i> Add More
       </a>
     </div>
   </div>
