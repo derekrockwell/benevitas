@@ -25,6 +25,10 @@ class MedicationRequestController < ApplicationController
 		@medication_request = current_user.medication_request
 		@medication_request.attributes = params[:medication_request]
 		@medication_request.save
+		respond_to do |format|
+			format.html
+			format.js
+		end		
 
 	end
 

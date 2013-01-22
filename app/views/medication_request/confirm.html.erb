@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="offset2 span7 well well-raised">
+	<div class="offset3 span6 well well-raised">
 		<h1>Is this correct?</h1>
 		<p class="lead">Prescriptions</p>
 		<% unless @medication_request.prescriptions.empty? %>
@@ -17,6 +17,7 @@
 			<%end%>
 		</ul>
 		<%end%>
-		<%= link_to "Submit Request", medication_request_path(@medication_request), :method => :put %>
+		<%= link_to "Submit Request", medication_request_path(@medication_request), :method => :put, :class => "btn btn-primary btn-large" %>
+		<%= link_to "Cancel", medication_request_index_path, :class => "btn btn-large" %>		
 	</div>
 </div>

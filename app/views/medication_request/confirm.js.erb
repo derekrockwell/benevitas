@@ -1,0 +1,14 @@
+var title       =   '.modal-window',
+    loader      =   '.progress',
+    content     =   '.modal-body-content',
+    dataRemote  =   'a[data-remote=true]';
+
+//hides the modal and shows the ajax content
+$(loader).fadeToggle('fast', function() {
+  $(content).hide().html('<%= j render("confirm") %>').fadeIn('slow');
+});
+
+$(document).on('click', dataRemote, function(){
+    $(content).empty();
+    $(loader).fadeIn('slow');
+});

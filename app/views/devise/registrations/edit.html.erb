@@ -1,29 +1,28 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row">
+  <div class="offset3 span6">
+    <% if !devise_error_messages!.empty? %>
+    <div class="alert alert-error alert-floating">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <%= devise_error_messages! %>
+    </div>
+    <% end %>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => "form-vertical well well-raised" }) do |f| %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <legend>Edit Your Account</legend>
+    <small class="help-block">Change your personal information:</small>
+    <%= f.input :email, :label_html => {:class => "control-label"}, :error_html => { :class => 'help-block'} %>
+    <%= f.input :password, :label_html => {:class => "control-label"}, :error_html => { :class => 'help-block'} %>
+    <%= f.input :password_confirmation, :label_html => {:class => "control-label"},:error_html => { :class => 'help-block'} %>
+    <%= f.input :current_password, :label_html => {:class => "control-label"}, :error_html => { :class => 'help-block'} %>
+    <p class="help-block">
+      To confirm ownership of your account, enter your existing password.
+    </p> 
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="form-actions align-center">
+      <%= f.submit "Save Changes", :class => "btn btn-primary btn-large" %>
+      <%= link_to "Cancel", root_path, :class => "btn " %>
+    </div>
+  </fieldset>
   <% end %>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>
+</div>
+</div>
