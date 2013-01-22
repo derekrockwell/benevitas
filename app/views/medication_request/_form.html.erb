@@ -1,7 +1,7 @@
 <%= form_for @medication_request, :url => medication_request_confirm_path(@medication_request), :method => :put, :html => {:class => "form-vertical"} do |f| %>
 
 <legend>Prescriptions</legend>
-<span class="help-block">List your presriptions below:</span>
+
 <div id="prescriptions">
 
   <div class="items">
@@ -32,6 +32,7 @@
 <hr />
 
 <legend>Over-the-Counter &amp; Supplements</legend>
+
 <div id="otc">
   <div class="items">
     <%= f.nested_fields_for :otc do |f| %>

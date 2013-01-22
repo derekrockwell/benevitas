@@ -1,10 +1,16 @@
 <div class="row">
-	<div class="span4 well well-raised">
+		<h1>
+			Medication Review
+		</h1>
+		<p class="lead">
+			Enter your medications and we will review them and send you a link back here with detailed information!
+		</p>
+	<div class="span4 well well-raised" style="margin-left:10px">
 		<%= render 'form' %>
 	</div>
-	<div class="span6">
+	<div class="span4">
 		<p class="lead">
-			Submit a list of your medications and we will review it and send you a link back here with detailed information!
+			Enter your medications and we will review them and send you a link back here with detailed information!
 		</p>
 		
 		<%= link_to "test submit modal", medication_request_confirm_path(@medication_request), {:class => "btn", :remote => true,'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
