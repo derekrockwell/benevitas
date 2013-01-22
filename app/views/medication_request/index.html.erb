@@ -6,9 +6,8 @@
 		<p class="lead">
 			Submit a list of your medications and we will review it and send you a link back here with detailed information!
 		</p>
-		<!-- Button to trigger modal -->
-		<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-		<%= link_to "test", medication_request_confirm_path(@medication_request), {:class => "btn", :remote => true,'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
+		
+		<%= link_to "test submit modal", medication_request_confirm_path(@medication_request), {:class => "btn", :remote => true,'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
 		<!-- Modal -->
 		<div id="modal-window" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">

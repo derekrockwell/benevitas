@@ -1,34 +1,29 @@
-<div id="login">
-	<% flash.each do |key, value| %>
-	<div class="alert alert-informational alert-floating">
-		<button type="button" class="close" data-dismiss="alert">×</button>
-		<%= content_tag :div, value, :class => "flash #{key}" unless value.blank? %>
-	</div>
-	<% end %>
-	<%= form_for("user", :url => user_session_path, :html => {:class => "form-vertical well well-raised clearfix"} ) do |f| %>
+<div class="row">
+	<div class="offset4 span4">
+		<% flash.each do |key, value| %>
+		<div class="alert alert-informational alert-floating">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<%= content_tag :div, value, :class => "flash #{key}" unless value.blank? %>
+		</div>
+		<% end %>
 
-	<fieldset>
+		<%= simple_form_for("user", :url => user_session_path, :html => {:class => "form-vertical well well-raised clearfix"} ) do |f| %>
+
 		<legend>User Login 
 			<small class="pull-right">Need an account? 
 				<%= link_to('Create an account', new_user_registration_path)  %>
 			</small>
 		</legend>
-		<div class="control-group">
-			<label for="email" class="control-label">Email</label>
-			<div class="controls">
-				<%= f.text_field(:email, :placeholder => "Email", :id => "Email", :class => "input-full", :autofocus => "autofocus") %>
-			</div>
-		</div>
-		<div class="control-group">
-			<label for="password" class="control-label">Password</label>
-			<div class="controls">
-				<%= f.password_field(:password, :placeholder => "Password", :id => "Password", :class => "input-full") %>
-			</div>
-		</div>
+
+		<%= f.input :email, :label_html => {:class => "control-label"}, :error_html => { :class => 'help-block'} %>
+		<%= f.input :password, :label_html => {:class => "control-label"}, :error_html => { :class => 'help-block'} %>
+
+		<p class="help-block">
+			Forgot your password? <%= link_to "Click Here", new_user_password_path %> 
+		</p>
+
 		<%= f.submit('Sign In', :class=>"btn btn-primary btn-large pull-right", :id => "sign_in_button") %> 
-	</fieldset>
-<% end %>
-</div>
-<div class="row align-center">
-	Forgot your password? <%= link_to "Click Here", new_user_password_path %> 
+
+		<% end %>
+	</div>
 </div>
