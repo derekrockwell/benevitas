@@ -1,0 +1,16 @@
+<p class="lead">Prescriptions</p>
+<% unless @medication_request.prescriptions.empty? %>
+<ul>
+	<% @medication_request.prescriptions.each do |prescription| %>
+	<li><%=prescription.name%></li>
+	<%end%>
+</ul>
+<%end%>
+<p class="lead">Over the Counter/Supplements</p>
+<% unless @medication_request.otc.empty? %>
+<ul>
+	<% @medication_request.otc.each do |otc| %>
+	<li><%=otc.name%></li>
+	<%end%>
+</ul>
+<%end%>

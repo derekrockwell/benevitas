@@ -1,8 +1,32 @@
-<div class="row well ">
+<div class="row">
 	<div class="span4 well well-raised">
 		<%= render 'form' %>
 	</div>
 	<div class="span6">
-		
+		<p class="lead">
+			Submit a list of your medications and we will review it and send you a link back here with detailed information!
+		</p>
+		<!-- Button to trigger modal -->
+		<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+		<%= link_to "test", medication_request_confirm_path(@medication_request), {:class => "btn", :remote => true,'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
+		<!-- Modal -->
+		<div id="modal-window" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Are you sure?</h3>
+			</div>
+			<div class="modal-body">
+				<div class="modal-body-content"></div>
+				<div class="ajax-loader"></div>
+				<div class="progress progress-striped active">
+					<div class="bar" style="width: 100%;"></div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+				<%= link_to "Submit Request", medication_request_path(@medication_request), :method => :put, :class => "btn btn-primary btn-large" %>
+			</div>
+		</div>
 	</div>
 </div>

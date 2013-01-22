@@ -1,1 +1,18 @@
-THINGS ARE PENDIN' YO.
+<%unless flash.blank? %>
+<div class="row">
+	<% flash.each do |key, value| %>
+	<div class="offset3 span6 alert alert-informational alert-floating">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		<%= content_tag :div, value, :class => "flash #{key}" unless value.blank? %>
+	</div>
+	<% end %>
+</div>
+<% end%>
+<div class="row">
+	<div class="offset3 span6 well well-raised">
+		<h2>Your Results are Pending...</h2>
+		<p class="lead">
+			We've received your request and it is now being reviewed for any potential complications you may wish to communicate with your doctor. If you have not received an update within 24 hours of submission, please contact us!
+		</p>
+	</div>
+</div>
